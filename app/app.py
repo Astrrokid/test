@@ -41,7 +41,8 @@ def get_recommendations_api():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
-
+def handler(request, *args):
+    return app(request.environ, *args)
 # Run the Flask app
 if __name__ == '__main__':
     app.run(debug=True)
