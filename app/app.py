@@ -64,7 +64,7 @@ def get_recommendations(user_id, user_follow_matrix, user_similarity_matrix, top
     weighted_scores = user_follow_matrix.loc[similar_users.index].T @ similar_users
     recommendations = weighted_scores[user_ratings == 0].sort_values(ascending=False)
     # Convert to a list and shuffle
-    recommendations_list = list(recommendations.head(top_n).index)
+    recommendations_list = list(recommendations.head(top_n).index).remove(user_id)
     random.shuffle(recommendations_list)
     return recommendations_list
 
