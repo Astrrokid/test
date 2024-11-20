@@ -24,12 +24,12 @@ Generates recommendations for a given user.
 #### Request Body
 ```json
 {
-  "user_id": 1853, 
+  "user_id": 1853, #Example 
   "top_n": 5
 }
-
+```
 #### Response Body
 ```json
 {
-  "recommendations": [101, 102, 103, 104, 105]
+  "recommendations": [101, 102, 103, 104, 105] #Example
 }
