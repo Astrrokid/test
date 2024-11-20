@@ -27,3 +27,9 @@ Generates recommendations for a given user.
   "user_id": 1853, 
   "top_n": 5
 }
+
+#### Response Body
+```json
+{
+  "recommendations": [101, 102, 103, 104, 105]
+}
