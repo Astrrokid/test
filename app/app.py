@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import pandas as pd
 import sys
+import os
 import random
 from datetime import datetime, timedelta, timezone
 from exception import CustomException
@@ -41,5 +42,8 @@ def get_cat_suggestion_api():
     except Exception as e:
         raise CustomException(e,sys)
 # Run the Flask app
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000)) 
+    app.run(host='0.0.0.0', port=port)
+
