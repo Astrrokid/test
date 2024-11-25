@@ -1,6 +1,5 @@
 pandas
 flask
-werkzeug
 scikit-learn
 sentence-transformers
 psycopg2
