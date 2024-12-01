@@ -7,14 +7,17 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import OneHotEncoder
 import psycopg2
 import random
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 class FollowerReccomendation():
     def __init__(self, table_name='accounts_following'):
         # Connection parameters
-        host = 'aws-0-eu-central-1.pooler.supabase.com'
-        dbname = 'postgres'
-        user = 'postgres.ecdxmmbintgqxnwguhua'
-        password = 'Ypp2NTj7hGskPbm1'
+        host = os.getenv('HOST')
+        dbname = os.getenv('DBNAME')
+        user = os.getenv('USER')
+        password = os.getenv('PASSWORD')
 
         # Establish connection
         conn = psycopg2.connect(

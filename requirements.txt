@@ -4,3 +4,5 @@ werkzeug
 scikit-learn
 sentence-transformers
 psycopg2
+dotenv
+chromadb
