@@ -37,7 +37,7 @@ def get_cat_suggestion_api():
 
         cat_rec = CatetgoryReccomendation()
         suggestions = cat_rec.get_similar_categories(job_title)
-        return jsonify({"suggestions": suggestions})
+        return jsonify({"suggestions": suggestions[0]})
 
     except Exception as e:
         raise CustomException(e,sys)
